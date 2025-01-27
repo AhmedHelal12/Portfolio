@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0ovod(cs8v8tk_8652*q^kpx3c)@px39of&aomb*73)u0#n+*^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =['Helal.pythonanywhere']
+# ALLOWED_HOSTS =['Helal.pythonanywhere']
 
 # Application definition
 
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -8,7 +8,7 @@ body{
     background-color: #111723;
     font-family: Arial, Helvetica, sans-serif;
     height: 95vh;
-
+    font-size: 24px;
 }
 .container{
     width: 80%;
@@ -78,11 +78,17 @@ a:hover{
     background: linear-gradient(to right, #f32b8c, #8c58b4);
     -webkit-background-clip: text;
     color: transparent;
-    font-size: 2rem; 
+    font-size: 4rem; 
     font-weight: bold;
     text-transform: uppercase;
     /* margin: 2.2rem auto 0; */
     
+}
+
+@media (max-width:768px) {
+    .gradient{
+        font-size: 2rem;
+    }
 }
 
 .hero-container .desc{
@@ -93,7 +99,7 @@ a:hover{
 
 .workbutton{
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
@@ -248,16 +254,14 @@ option:focus{
 
 }
 .mail div:first-child{
-    font-size: 24px;
     color: white;
 }
-.mail div:last-child{
+.mail div:last-child a{
     color:#5290cc;
-    font-size: 16px;
     padding-left: 3px;
+    font-size: 24px;
 }
 .social_contact > p{
-    font-size: 25px;
     color: white;
 }
 
@@ -271,11 +275,11 @@ option:focus{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 2.5rem;
 }
 
 
 .social_links p{
-    font-size: 22px;
     color: white;
     text-align: center;
 }
@@ -287,7 +291,7 @@ option:focus{
 
 
 .contact_form{
-    max-width: 400px;
+    /* max-width: 400px; */
     padding: 10px;
     border-radius: 10px;
     margin: 20px auto;
@@ -353,6 +357,7 @@ option:focus{
 @media (max-width: 768px) {
     .main_contact{
         flex-direction: column;
+        text-align: center;
     }
     .contact_links{
         flex-direction: column;
