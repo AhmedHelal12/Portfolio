@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="container about">
+        <h2 class="gradient">
+            Skills
+        </h2>
+        <p class="para">
+            The skills, techonolies, and tools I use:
+        </p>
+        <div class="skills">
+            {% for skill in skills %}
+                <img src="{{skill.image.url}}" alt="">
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="certificates">
+            <h2 class="gradient">Certificates</h2>
+            <div class="cert">
+                <p>Udacity: <a target="_blank" href="https://drive.google.com/file/d/17HGgyqZnt6WN3rfvKP6H2ja6r_b1ylXI/view?usp=sharing">Challenger Track</a></p>
+                <p>Udacity: <a target="_blank" href="https://drive.google.com/file/d/1XsH_2Y_EAIn0GU3Nm9XGUxFn_UBTsQvl/view?usp=sharing">Professional Track</a></p>
+                <p>ITI: <a target="_blank" href="https://drive.google.com/file/d/12i1Yj2nE0KSoOfiSeqG7yBj_bGfdSFtA/view?usp=sharing">ITI internship</a></p>
+                <p>Collage: <a target="_blank" href="https://drive.google.com/file/d/138Hq43IVkE5VLYz0GNYh-zG0U_QVqVvR/view?usp=sharing">Graduation Certificate</a></p>
+            </div>
+        </div>
+        <hr>
+        <h2 class="gradient">About me</h2>
+        
+        <p class="aboutme">
+            Hi, I’m Ahmed, a <span class="diff">Computer Science</span> student at Cairo University specializing in <span class="diff">Artificial Intelligence</span>. I have a strong foundation in Computer Science and AI principles, which fuels my passion for creating innovative and efficient solutions.
+
+My journey started with <span class="diff">frontend</span> development, where I gained valuable experience building visually appealing and user-friendly interfaces. Over time, I discovered my interest in backend development and have since specialized in crafting robust, scalable, and secure systems using the <span class="diff">Django</span> framework.
+
+Beyond coding, I’m an avid reader and a lifelong learner who enjoys diving into topics ranging from technology to philosophy. I’m also fascinated by languages—both human and programming languages—continuously exploring how they shape communication and creativity.
+
+With a blend of technical expertise and curiosity, I’m dedicated to honing my skills and making meaningful contributions to the tech world.
+        </p>
+
+
+        <!-- <p class="foot">This design is inspired by @<a class="diff" href="https://www.behance.net/gallery/215836435/Landing-Page-Portfolio-Frontend-Developer">Tetiana</a> </p> -->
+    </div>
+
+{% endblock content %}

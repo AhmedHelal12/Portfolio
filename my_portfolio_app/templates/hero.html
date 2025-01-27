@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="hero-container">
+        <div class="left-content">
+            <div class="title">
+                    <div class="gradient">Django </div>
+                    <div class="gradient">Developer</div>
+            </div>
+            <p class="desc">Passionate and driven Computer Science graduate with a strong foundation in backend development, specializing in Django. I enjoy solving complex problems, building robust web applications, and continuously learning new technologies to improve my skills.</p>
+            <div class="workbutton"><a href="{% url 'list_projects' %}">View My Projects</a></div>
+        </div>
+        <div class="right-content">
+            <div class="right-content">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 400 300"
+                  width="400"
+                  height="300"
+                >
+                  <!-- Outer screen -->
+                  <rect
+                    x="10"
+                    y="10"
+                    width="380"
+                    height="280"
+                    rx="10"
+                    fill="#1f2937"
+                    stroke="#3f4754"
+                    stroke-width="2"
+                  />
+                  <!-- Inner screen (coding area) -->
+                  <rect
+                    x="30"
+                    y="40"
+                    width="340"
+                    height="220"
+                    rx="8"
+                    fill="#111827"
+                  />
+                  <!-- Top bar -->
+                  <rect x="30" y="20" width="340" height="10" fill="#3f4754" />
+                  <!-- Top bar circles -->
+                  <circle cx="45" cy="25" r="5" fill="#ff6b6b" />
+                  <circle cx="65" cy="25" r="5" fill="#ffa726" />
+                  <circle cx="85" cy="25" r="5" fill="#66bb6a" />
+                  <!-- Animated lines of code -->
+                  <text x="50" y="70" font-size="14" fill="#34d399">
+                    <animate
+                      attributeName="x"
+                      values="50; 60; 50"
+                      dur="1s"
+                      repeatCount="indefinite"
+                    />
+                    def greet():
+                  </text>
+                  <text x="50" y="90" font-size="14" fill="#c3dae0">
+                    <animate
+                      attributeName="x"
+                      values="50; 70; 50"
+                      dur="1s"
+                      begin="0.2s"
+                      repeatCount="indefinite"
+                    />
+                    print("Hello, world!")
+                  </text>
+                  <text x="50" y="110" font-size="14" fill="#7dd3fc">
+                    <animate
+                      attributeName="x"
+                      values="50; 65; 50"
+                      dur="1.5s"
+                      repeatCount="indefinite"
+                    />
+                    greet()
+                  </text>
+                </svg>
+              </div>
+        </div>
+    </div>
+{% endblock content %}

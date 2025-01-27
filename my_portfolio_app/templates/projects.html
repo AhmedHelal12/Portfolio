@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h2 class="gradient">Projects</h2>
+        <form class="filter_form" action="" method="GET">
+            {% csrf_token %}
+            <label for="filter">Filter by: </label>
+            <select id="filter" name="category" value="{{request.GET.category}}" onchange="this.form.submit()">
+                <option 
+                {% if request.GET.category == "all" %}
+                    selected
+                {% endif %}
+                     value="all">All</option>
+                <option 
+                    {% if request.GET.category == "django" %}
+                        selected
+                    {% endif %}
+                 value="django">Django</option>
+                <option
+                    {% if request.GET.category == "py" %}
+                        selected
+                    {% endif %}
+                 value="python">Python</option>
+                <option
+                    {% if request.GET.category == "js" %}
+                        selected
+                    {% endif %}
+                 value="js">JS</option>
+                <option
+                    {% if request.GET.category == "front" %}
+                        selected
+                    {% endif %}
+                value="front">HTML5 and CSS3</option>
+            </select>
+        </form>
+        <div class="projects">
+            {% for project in object_list %}
+            <div class="card">
+                <img src="{{ project.image.url }}" alt="">
+                <h3>{{project.name}}</h3>
+                <p> {{project.description}} </p>
+                <p class="tech"> ({% for tech in project.technology.all %}
+                        {{tech.name}}
+                        {% if not forloop.last %},
+                        {% endif %}
+                    {% endfor %})</p>
+                <div class="btn">
+                    <a href="{{project.link}}" target="_blank" >Go to the project</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+        <div class="paginator">
+            {% if object_list.paginator.count > 0 %}
+                {% if object_list.has_previous %}
+                    <span>
+                        <a href="?page={{ object_list.previous_page_number }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}">
+                            Previous
+                        </a>
+                    </span>
+                {% else %}
+                    <span><a href="#" class="disabled" disabled>Previous</a></span>
+                {% endif %}
+        
+                {% if object_list.has_next %}
+                    <span>
+                        <a href="?page={{ object_list.next_page_number }}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}">
+                            Next
+                        </a>
+                    </span>
+                {% else %}
+                    <span><a href="#" class="disabled" disabled>Next</a></span>
+                {% endif %}
+            {% else %}
+                <h2>No Projects to display for this category!</h2>
+            {% endif %}
+        </div>
+    </div>
+        
+    </div>
+            
+{% endblock content %}
