@@ -2,6 +2,8 @@
 :root{
     --primary-color:#8b59b2;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body{
@@ -29,7 +31,7 @@ header{
 }
 ul{
     list-style: none;
-
+    padding: 0;
 }
 header nav ul{
     display: flex;
@@ -55,7 +57,43 @@ a:hover{
     cursor: pointer;
 }
 
+.cv {
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.cv:hover {
+    color: var(--primary-color);
+
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+}
+
+@media (max-width:768px) {
+    header{
+        position: relative;
+    }
+    header nav{
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 0;
+        margin: 5px;
+    }
+
+    header nav ul li a{
+        color: #666;
+    }
+    header nav ul li:hover{
+        color: var(--primary-color);
+        
+    }
+}
 /* End Header  */
 
 /* Start Hero Section  */
@@ -259,7 +297,8 @@ option:focus{
 .mail div:last-child a{
     color:#5290cc;
     padding-left: 3px;
-    font-size: 24px;
+    font-size: 1.1rem;
+
 }
 .social_contact > p{
     color: white;
@@ -433,4 +472,46 @@ option:focus{
     font-size: 16px;
 }
 
+@media (max-width:768px) {
+    body{
+        font-size: 16px;
+        padding: 4px;
+        width: 90%;
+        margin: auto;
+    }
+    .hero-container .desc{
+        width: 100%;
+    }
+    .workbutton{
+        font-size: 16px;
+        width: 100%;
+        padding: 10px;
+    }
+    .logo{
+        display: none;
+    }
+    .projects{
+        width: 100%;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    nav .nav-list{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+    nav .nav-list.active{
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger{
+        margin-right: auto;
+    }
+
+}
 /* End About section  */

@@ -11,16 +11,22 @@
 <body>
     <div class="container">
         <header>
-            <div ><a href="{% url 'home' %}" class="logo"> Ahmed Helal</a></div>
+            <div><a href="{% url 'home' %}" class="logo">Ahmed Helal</a></div>
+
+            <div class="hamburger" id="hamburger-icon">
+                &#9776;
+            </div>
+
             <nav>
-                <ul>
+                <ul class="nav-list">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'list_projects' %}">Projects</a></li>
                     <li><a href="{% url 'contact' %}">Contact</a></li>
-                    <li><a href="{% url 'about' %}">Aboutme</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                 </ul>
             </nav>
             <div class="cv"><a target="_blank" download href="https://www.canva.com/design/DAGbm1zhduM/DOaUn6Pjmlb4Me-4nxwzkQ/view?utm_content=DAGbm1zhduM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h53183fef22">CV</a></div>
+
         </header>
 
     </div>
@@ -28,5 +34,14 @@
     {% block content %}
             
     {% endblock content %}
+
+    <script>
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const myNav = document.querySelector('nav .nav-list');
+
+        hamburgerIcon.addEventListener('click',function(){
+            myNav.classList.toggle('active')
+        })
+    </script>
 </body>
 </html>
