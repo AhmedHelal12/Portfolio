@@ -76,24 +76,7 @@ a:hover{
 }
 
 @media (max-width:768px) {
-    header{
-        position: relative;
-    }
-    header nav{
-        position: absolute;
-        overflow: hidden;
-        top: 50%;
-        left: 0;
-        margin: 5px;
-    }
 
-    header nav ul li a{
-        color: #666;
-    }
-    header nav ul li:hover{
-        color: var(--primary-color);
-        
-    }
 }
 /* End Header  */
 
@@ -499,6 +482,23 @@ option:focus{
 
 @media (max-width:768px) {
 
+    header{
+        position: relative;
+    }
+    header nav .nav-list.active{
+
+    }
+    header nav ul li{
+        padding: 15px;
+    }
+    header nav ul li a{
+        color: #E0E0E0;
+    }
+    header nav ul li:hover{
+        color: var(--primary-color);
+        
+    }
+
     nav .nav-list{
         display: none;
     }
@@ -507,8 +507,17 @@ option:focus{
         display: block;
     }
     nav .nav-list.active{
+        text-align: center;
         display: flex;
         flex-direction: column;
+        position: absolute;
+        left: -52px;
+        background-color: #111723;        ;
+        width: 70%;
+        height: 93vh;
+        z-index: 100;
+        top: 70%;
+        transition: 0.6s;
     }
     .hamburger{
         margin-right: auto;
